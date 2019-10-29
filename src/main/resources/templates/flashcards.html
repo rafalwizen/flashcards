@@ -15,10 +15,11 @@
 <div class="container">
 <h2>test</h2>
 	<div align="center">
-	
-	
-	
+		<p th:text="${randomCard.english}"></p>
 	</div>
+	<form action="#" th:action="@{/test/game}" align="center" >
+		<button type="submit" class="btn btn-info col-2">Next</button>
+	</form>
 </div>
 
 </body>
