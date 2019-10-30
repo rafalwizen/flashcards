@@ -9,7 +9,7 @@ import wizen.rafal.flashcards.entity.Card;
 import wizen.rafal.flashcards.service.CardService;
 
 @Controller
-@RequestMapping("/test")
+@RequestMapping("/")
 public class CardController {
 
 	private CardService cardService;
@@ -26,4 +26,17 @@ public class CardController {
 		theModel.addAttribute("randomCard", tempCard);
 		return "flashcards";
 		}
+	
+	// expose
+	@RequestMapping("/showFormForAdd")
+	public String showFormForAdd(Model theModel) {
+		
+		// create new attribute to bind form data
+		Card tempCard = new Card();
+		
+		theModel.addAttribute("tempCard", tempCard);
+		
+		return "add-flashcard";
+	}
+	
 }

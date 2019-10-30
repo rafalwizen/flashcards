@@ -12,7 +12,7 @@ import wizen.rafal.flashcards.entity.Card;
 import wizen.rafal.flashcards.service.CardService;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/rest")
 public class CardRestController {
 	
 	private CardService cardService;
