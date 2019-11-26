@@ -17,14 +17,11 @@ public class CardDAOHibernateImpl implements CardDAO {
 	// define field for entitymanager
 	private EntityManager entityManager;
 	
-	// set up constructor injection
 	@Autowired
 	public CardDAOHibernateImpl(EntityManager theEntityManager) {
 		entityManager = theEntityManager;
 	}
 	
-	
-	// TEST method
 	@Override
 	public List<Card> findAll() {
 
@@ -39,6 +36,23 @@ public class CardDAOHibernateImpl implements CardDAO {
 		
 		// return result
 		return cards;
+	}
+
+
+	@Override
+	public void saveCard(Card card) {
+		
+		Session currentSession = entityManager.unwrap(Session.class);
+		
+		currentSession.save(card);
+	}
+
+	@Override
+	public void deleteCard(int theId) {
+
+		Session currentSession = entityManager.unwrap(Session.class);
+		
+		//currentSession.de
 	}
 
 }

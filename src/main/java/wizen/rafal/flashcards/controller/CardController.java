@@ -3,7 +3,11 @@ package wizen.rafal.flashcards.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import wizen.rafal.flashcards.entity.Card;
 import wizen.rafal.flashcards.service.CardService;
@@ -39,4 +43,18 @@ public class CardController {
 		return "add-flashcard";
 	}
 	
+	@PostMapping("/save")
+	public String save(@ModelAttribute ("tempCard") Card tempCard) {
+		
+		cardService.saveCard(tempCard);
+		return "redirect:/game";
+	}
+	
+	@GetMapping("/delete")
+	public String delete(@RequestParam("id") int theId) {
+		
+		cardService.deleteCard(theId);
+		System.out.println("ok");
+		return "redirect:/game";
+	}
 }

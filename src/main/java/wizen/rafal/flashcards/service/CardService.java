@@ -8,4 +8,6 @@ public interface CardService {
 
 	public List<Card> findAll();
 	public Card randomFlashcard();
+	public void saveCard(Card card);
+	public void deleteCard(int theId);
 }

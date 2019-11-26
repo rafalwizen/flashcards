@@ -8,4 +8,6 @@ public interface CardDAO {
 
 	// TEST method
 	public List<Card> findAll();
+	public void saveCard(Card card);
+	public void deleteCard(int theId);
 }

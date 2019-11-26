@@ -7,23 +7,44 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<script src="scripts.js"></script>
+	<link rel="stylesheet" th:href="@{/css/styles.css}" />
+	<script src="js/scripts.js"></script>
 	<title>Flash Cards</title>
 </head>
 <body>
 
 <div class="container">
-<h2>test</h2>
-	<div align="center">
-		<p th:text="${randomCard.english}"></p>
+<br>
+<h2>Flashcard to guess:</h2>
+	<div class="heightBlock">
+		<div>
+			<p class="flashCardsText" id="en" th:text="${randomCard.english}"></p>
+		</div>
+		<div>
+			<p class="flashCardsText" id="pl" hidden th:text="${randomCard.polish}"></p>
+		</div>
 	</div>
-	<form action="#" th:action="@{/game}" align="center" >
-		<button type="submit" class="btn btn-info col-2">Next</button>
-	</form>
+	<div class="row justify-content-md-center" align="center">
+		<div class="col-2">
+			<button onclick="changeVisibility()" class="btn btn-info mb-3">Tanslate</button>
+		</div>
+		<div class="col-2">
+			<form action="#" th:action="@{/game}" align="center" >
+				<button type="submit" class="btn btn-info  mb-3">Next</button>
+			</form>
+		</div>
+		<div class="col-2">
+			<form action="#" th:action="@{/delete}" align="center" >
+				<button type="submit" class="btn btn-danger  mb-3"
+						onclick="if(!(confirm('Are you sure you want to delete this flashcard?'))) return false">
+						Delete Flashcard</button>
+			</form>
+		</div>
+	</div>
 </div>
 <div>
 	<a th:href="@{/showFormForAdd}"
-		class="btn btn-primary btn-sm mb-3">
+		class="btn btn-primary btn-sm ml-3">
 		Add New Flashcard
 	</a>
 </div>
