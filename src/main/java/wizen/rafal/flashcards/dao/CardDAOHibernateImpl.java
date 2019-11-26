@@ -51,8 +51,11 @@ public class CardDAOHibernateImpl implements CardDAO {
 	public void deleteCard(int theId) {
 
 		Session currentSession = entityManager.unwrap(Session.class);
+
+		Query theQuery = currentSession.createQuery("delete from Card where id=:cardId");
+		theQuery.setParameter("cardId", theId);
 		
-		//currentSession.de
+		theQuery.executeUpdate();
 	}
 
 }

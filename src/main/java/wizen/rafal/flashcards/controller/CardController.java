@@ -54,7 +54,6 @@ public class CardController {
 	public String delete(@RequestParam("id") int theId) {
 		
 		cardService.deleteCard(theId);
-		System.out.println("ok");
 		return "redirect:/game";
 	}
 }
