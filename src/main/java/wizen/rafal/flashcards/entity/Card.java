@@ -19,6 +19,9 @@ public class Card {
 	@Column(name="polish")
 	private String polish;
 	
+	@Column(name="level")
+	private int level;
+	
 	public Card() {
 		
 	}
@@ -26,6 +29,8 @@ public class Card {
 	public Card(String english, String polish) {
 		this.english = english;
 		this.polish = polish;
+		//every word start as level 1
+		this.level = 1;
 	}
 
 
@@ -52,6 +57,14 @@ public class Card {
 
 	public void setPolish(String polish) {
 		this.polish = polish;
+	}
+
+	public int getLevel() {
+		return level;
+	}
+
+	public void setLevel(int level) {
+		this.level = level;
 	}
 	
 	

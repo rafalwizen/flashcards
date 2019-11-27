@@ -24,7 +24,6 @@ public class CardRestController {
 	}
 	
 	// TEST
-	// expose "/flashcards"
 	@GetMapping("/list")
 	public List<Card> findAll(){
 		System.out.println("find all test");
@@ -32,12 +31,21 @@ public class CardRestController {
 	}
 	
 	// TEST
-	// expose "/randomFlashcard"
 	@GetMapping("/card")
 	public Card randomFlashcard(){
 		System.out.println("random test");
 		return cardService.randomFlashcard();
 	}
 	
+	// TEST
+	@GetMapping("/listByLevel1")
+	public List<Card> findOnlySameLevel1(){
+		return cardService.findOnlySameLevel(1);
+	}
 	
+	// TEST
+	@GetMapping("/listByLevel2")
+	public List<Card> findOnlySameLevel2(){
+		return cardService.findOnlySameLevel(2);
+	}
 }

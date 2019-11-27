@@ -10,4 +10,5 @@ public interface CardService {
 	public Card randomFlashcard();
 	public void saveCard(Card card);
 	public void deleteCard(int theId);
+	public List<Card> findOnlySameLevel(int level);
 }

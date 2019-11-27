@@ -24,24 +24,17 @@ public class CardDAOHibernateImpl implements CardDAO {
 	
 	@Override
 	public List<Card> findAll() {
-
-		// get current hibernate session by unwrap
 		Session currentSession = entityManager.unwrap(Session.class);
 		
-		// create a query
 		Query<Card> theQuery = currentSession.createQuery("from Card", Card.class);
-		
-		// execute query and get result list 
 		List<Card> cards = theQuery.getResultList();
-		
-		// return result
+
 		return cards;
 	}
 
 
 	@Override
-	public void saveCard(Card card) {
-		
+	public void saveCard(Card card) {		
 		Session currentSession = entityManager.unwrap(Session.class);
 		
 		currentSession.save(card);
@@ -49,13 +42,23 @@ public class CardDAOHibernateImpl implements CardDAO {
 
 	@Override
 	public void deleteCard(int theId) {
-
 		Session currentSession = entityManager.unwrap(Session.class);
 
 		Query theQuery = currentSession.createQuery("delete from Card where id=:cardId");
 		theQuery.setParameter("cardId", theId);
 		
 		theQuery.executeUpdate();
+	}
+
+	@Override
+	public List<Card> findOnlySameLevel(int level) {
+		Session currentSession = entityManager.unwrap(Session.class);
+		
+		Query<Card> theQuery = currentSession.createQuery("from Card where level=:levelNum", Card.class);
+		theQuery.setParameter("levelNum", level);
+		List<Card> cards = theQuery.getResultList();
+		
+		return cards;
 	}
 
 }

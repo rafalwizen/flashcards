@@ -26,12 +26,13 @@
 	</div>
 	<div class="row justify-content-md-center" align="center">
 		<div class="col-2">
-			<button onclick="changeVisibility()" class="btn btn-info mb-3">Tanslate</button>
+			<button onclick="changeVisibility()" class="btn btn-info mb-3">Translation</button>
 		</div>
 		<div class="col-2">
-			<form action="#" th:action="@{/game}" align="center" >
+			<!-- <form action="#" th:action="@{/game}" align="center" >
 				<button type="submit" class="btn btn-info  mb-3">Next</button>
-			</form>
+			</form> -->
+			<button onclick="nextCard()" class="btn btn-info mb-3">Next</button>
 		</div>
 		<div class="col-2">
 			<a th:href="@{/delete(id=${randomCard.id})}"
@@ -42,10 +43,23 @@
 		</div>
 	</div>
 </div>
-<div>
+<div class="row justify-content-md-left">
 	<a th:href="@{/showFormForAdd}"
 		class="btn btn-primary btn-sm ml-3">
 		Add New Flashcard
+	</a>
+	
+	<a th:href="@{/game}"
+		class="btn btn-primary btn-sm ml-3">
+		Level 1
+	</a>
+	<a th:href="@{/game}"
+		class="btn btn-primary btn-sm ml-3">
+		Level 2
+	</a>
+	<a th:href="@{/game}"
+		class="btn btn-primary btn-sm ml-3">
+		Level 3
 	</a>
 </div>
 

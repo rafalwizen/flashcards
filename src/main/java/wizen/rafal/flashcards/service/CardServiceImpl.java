@@ -51,4 +51,13 @@ public class CardServiceImpl implements CardService {
 		cardDAO.deleteCard(theId);
 	}
 
+	@Override
+	public List<Card> findOnlySameLevel(int level) {
+		List<Card> tempList = cardDAO.findOnlySameLevel(level);
+		return tempList;
+	}
+
+	
+
+	
 }
