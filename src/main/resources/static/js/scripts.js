@@ -4,6 +4,6 @@ function changeVisibility() {
 }
 
 function nextCard() {
-	let r = document.getElementById('pl').textContent;
+	let r = document.getElementById('en');
 	document.getElementById('en').innerHTML = r;
 }

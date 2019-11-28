@@ -1,5 +1,7 @@
 package wizen.rafal.flashcards.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,8 +28,8 @@ public class CardController {
 	// expose "/randomFlashcard"
 	@RequestMapping("/game")
 	public String randomFlashcard(Model theModel){
-		Card tempCard = cardService.randomFlashcard();
-		theModel.addAttribute("randomCard", tempCard);
+		List<Card> tempList = cardService.findOnlySameLevel(1);
+		theModel.addAttribute("cardsList", tempList);
 		return "flashcards";
 		}
 	

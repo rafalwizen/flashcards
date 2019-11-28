@@ -1,3 +1,8 @@
+body {
+	background-image: url("/images/background-email-pattern.png");
+	/* Background pattern from Toptal Subtle Patterns */
+}
+
 .flashCardsText {
 	font-size: 200%;
 	text-align: center;
