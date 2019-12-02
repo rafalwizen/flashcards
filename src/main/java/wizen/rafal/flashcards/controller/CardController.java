@@ -26,12 +26,20 @@ public class CardController {
 	}
 	
 	// expose "/randomFlashcard"
-	@RequestMapping("/game")
-	public String randomFlashcard(Model theModel){
+	@GetMapping("/game")
+	public String getRandomFlashcard(Model theModel){
 		List<Card> tempList = cardService.findOnlySameLevel(1);
 		theModel.addAttribute("cardsList", tempList);
 		return "flashcards";
-		}
+	}
+	
+	@PostMapping("/game")
+	public String postRandomFlashcard(@ModelAttribute("bucketNumber") int bucketNumber, 
+																		Model theModel){
+		List<Card> tempList = cardService.findOnlySameLevel(bucketNumber);
+		theModel.addAttribute("cardsList", tempList);
+		return "flashcards";
+	}
 	
 	// expose
 	@RequestMapping("/showFormForAdd")
@@ -47,7 +55,7 @@ public class CardController {
 	
 	@PostMapping("/save")
 	public String save(@ModelAttribute ("tempCard") Card tempCard) {
-		
+		tempCard.setLevel(1);
 		cardService.saveCard(tempCard);
 		return "redirect:/game";
 	}

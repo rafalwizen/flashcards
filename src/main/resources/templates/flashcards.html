@@ -12,10 +12,15 @@
 	<title>Flash Cards</title>
 </head>
 <body>
+	<script th:inline="javascript">
+	/*<![CDATA[*/
+    	var cardsList = /*[[${cardsList}]]*/ 'default_text_error';
+	/*]]>*/
+	</script>
 
 <div class="container">
 <br>
-<h2>Flashcard to guess:</h2>
+<h2 th:inline="text">Flashcard to guess from bucket [[${cardsList.get(0).level}]]:</h2>
 	<div class="heightBlock">
 		<div>
 			<p class="flashCardsText" id="en" th:text="${cardsList.get(0).english}"></p>
@@ -29,10 +34,7 @@
 			<button onclick="changeVisibility()" class="btn btn-info mb-3">Translation</button>
 		</div>
 		<div class="col-2">
-			<!-- <form action="#" th:action="@{/game}" align="center" >
-				<button type="submit" class="btn btn-info  mb-3">Next</button>
-			</form> -->
-			<button onclick="nextCard()" class="btn btn-info mb-3">Next</button>
+			<button onclick="nextCard(cardsList)" class="btn btn-info mb-3">Next</button>
 		</div>
 		<div class="col-2">
 			<!-- <a th:href="@{/delete(id=${randomCard.id})}"
@@ -49,7 +51,20 @@
 		Add New Flashcard
 	</a>
 	
-	<a th:href="@{/game}"
+	<form action="#" th:action="@{/game}" method="POST">
+		<input type="hidden" name="bucketNumber" value="1"/>
+					<input type="submit" value="Bucket 1"
+					class="btn btn-primary btn-sm ml-3"/>
+		<input type="hidden" name="bucketNumber" value="2"/>
+					<input type="submit" value="Bucket 2"
+					class="btn btn-primary btn-sm ml-3"/>
+		<input type="hidden" name="bucketNumber" value="3"/>
+					<input type="submit" value="Bucket 3"
+					class="btn btn-primary btn-sm ml-3"/>
+	</form>
+	
+	
+	<!-- <a th:href="@{/game}"
 		class="btn btn-primary btn-sm ml-3">
 		Level 1
 	</a>
@@ -60,7 +75,7 @@
 	<a th:href="@{/game}"
 		class="btn btn-primary btn-sm ml-3">
 		Level 3
-	</a>
+	</a> -->
 </div>
 
 </body>
