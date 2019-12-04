@@ -50,16 +50,13 @@
 		class="btn btn-primary btn-sm ml-3">
 		Add New Flashcard
 	</a>
-	
+	<p class="lead ml-3"><b>Change bucket:</b></p>
 	<form action="#" th:action="@{/game}" method="POST">
-		<input type="hidden" name="bucketNumber" value="1"/>
-					<input type="submit" value="Bucket 1"
+			<input type="submit" name="bucketNumber" value="1"
 					class="btn btn-primary btn-sm ml-3"/>
-		<input type="hidden" name="bucketNumber" value="2"/>
-					<input type="submit" value="Bucket 2"
+			<input type="submit" name="bucketNumber" value="2"
 					class="btn btn-primary btn-sm ml-3"/>
-		<input type="hidden" name="bucketNumber" value="3"/>
-					<input type="submit" value="Bucket 3"
+			<input type="submit" name="bucketNumber" value="3"
 					class="btn btn-primary btn-sm ml-3"/>
 	</form>
 	
