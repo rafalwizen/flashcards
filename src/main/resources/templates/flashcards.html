@@ -23,10 +23,10 @@
 <h2 th:inline="text">Flashcard to guess from bucket [[${cardsList.get(0).level}]]:</h2>
 	<div class="heightBlock">
 		<div>
-			<p class="flashCardsText" id="en" th:text="${cardsList.get(0).english}"></p>
+			<p class="flashCardsText" id="toSolve" th:text="${cardsList.get(0).english}"></p>
 		</div>
 		<div>
-			<p class="flashCardsText" id="pl" hidden th:text="${cardsList.get(0).polish}"></p>
+			<p class="flashCardsText" id="answer" hidden th:text="${cardsList.get(0).polish}"></p>
 		</div>
 	</div>
 	<div class="row justify-content-md-center" align="center">
@@ -35,6 +35,9 @@
 		</div>
 		<div class="col-2">
 			<button onclick="nextCard(cardsList)" class="btn btn-info mb-3">Next</button>
+		</div>
+		<div class="col-2">
+			<button onclick="changeToSolveLanguage(cardsList)" class="btn btn-info mb-3">Change language</button>
 		</div>
 		<div class="col-2">
 			<!-- <a th:href="@{/delete(id=${randomCard.id})}"

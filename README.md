@@ -6,5 +6,4 @@ It's not finished yet.
 # Features to add
 * deleting card
 * fix bug when empty bucket
-* switch between english>polish and polish>english translation
 * upload to heroku or git.io
