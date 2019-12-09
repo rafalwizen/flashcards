@@ -60,10 +60,10 @@ public class CardController {
 		return "redirect:/game";
 	}
 	
-	@GetMapping("/delete")
-	public String delete(@RequestParam("id") int theId) {
-		
-		cardService.deleteCard(theId);
+	@PostMapping("/delete")
+	public String delete(@RequestParam("currentCardId") int theId) {
+		System.out.println("1");
+		cardService.delete(theId);
 		return "redirect:/game";
 	}
 }
