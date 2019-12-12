@@ -32,3 +32,7 @@ function deleteCurrentCard() {
 	document.getElementById('deleteField').value = currentCardId;
 	return true;
 }
+
+function moveToNextBucket() {
+	document.getElementById('moveToNextValue').value = currentCardId;
+}

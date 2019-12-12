@@ -36,8 +36,7 @@ public class CardDAOHibernateImpl implements CardDAO {
 	@Override
 	public void saveCard(Card card) {		
 		Session currentSession = entityManager.unwrap(Session.class);
-		
-		currentSession.save(card);
+		currentSession.saveOrUpdate(card);
 	}
 
 	@Override
@@ -59,6 +58,13 @@ public class CardDAOHibernateImpl implements CardDAO {
 		List<Card> cards = theQuery.getResultList();
 		
 		return cards;
+	}
+
+	@Override
+	public Card findCardById (int theId) {
+		Session currentSession = entityManager.unwrap(Session.class);
+		
+		return currentSession.get(Card.class, theId);
 	}
 
 }

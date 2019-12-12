@@ -11,4 +11,5 @@ public interface CardService {
 	public void saveCard(Card card);
 	public void delete(int theId);
 	public List<Card> findOnlySameLevel(int level);
+	public void moveToNextBucket(int theId);
 }

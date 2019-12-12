@@ -11,4 +11,5 @@ public interface CardDAO {
 	public void saveCard(Card card);
 	public void deleteCard(int theId);
 	public List<Card> findOnlySameLevel(int level);
+	public Card findCardById (int theId);
 }

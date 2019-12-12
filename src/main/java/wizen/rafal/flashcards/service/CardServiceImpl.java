@@ -56,6 +56,18 @@ public class CardServiceImpl implements CardService {
 		return tempList;
 	}
 
+	@Override
+	@Transactional
+	public void moveToNextBucket(int theId) {
+		Card tempCard = cardDAO.findCardById(theId);
+		if(tempCard.getLevel() == 1) {
+			tempCard.setLevel(2);
+		} else if (tempCard.getLevel() == 2) {
+			tempCard.setLevel(3);
+		}
+		cardDAO.saveCard(tempCard);
+	}
+
 	
 
 	

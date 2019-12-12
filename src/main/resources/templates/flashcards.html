@@ -40,16 +40,19 @@
 			<button onclick="changeToSolveLanguage(cardsList)" class="btn btn-info mb-3">Change language</button>
 		</div>
 		<div class="col-2">
-			<!--  <a th:href="@{/delete(id=${randomCard.id})}"
-			class="btn btn-danger  mb-3"
-			onclick="if(!(confirm('Are you sure you want to delete this flashcard?'))) return false">
-			Delete
-			</a>-->
 			<form action="#" th:action="@{/delete}" method="POST">
-				<input id="deleteField" type="hidden" name="currentCardId" value="2"/>
+				<input id="deleteField" type="hidden" name="currentCardId" value="#"/>
 				<button type="submit" class="btn btn-info mb-3"
 				onclick="deleteCurrentCard()"
 							>Delete</button>
+			</form>
+		</div>
+		<div class="col-3">
+			<form action="#" th:action="@{/moveToNextBucket}" method="POST">
+				<input id="moveToNextValue" type="hidden" name="currentCardId" value="#"/>
+				<button type="submit" class="btn btn-info mb-3"
+				onclick="moveToNextBucket()"
+							>Move to next bucket</button>
 			</form>
 		</div>
 	</div>

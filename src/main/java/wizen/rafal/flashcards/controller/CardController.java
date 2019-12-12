@@ -62,8 +62,13 @@ public class CardController {
 	
 	@PostMapping("/delete")
 	public String delete(@RequestParam("currentCardId") int theId) {
-		System.out.println("1");
 		cardService.delete(theId);
+		return "redirect:/game";
+	}
+	
+	@PostMapping("/moveToNextBucket")
+	public String moveToNextBucket(@RequestParam("currentCardId") int theId) {
+		cardService.moveToNextBucket(theId);
 		return "redirect:/game";
 	}
 }
