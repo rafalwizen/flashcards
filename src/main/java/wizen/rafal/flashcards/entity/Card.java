@@ -33,8 +33,6 @@ public class Card {
 		this.level = 1;
 	}
 
-
-
 	public int getId() {
 		return id;
 	}

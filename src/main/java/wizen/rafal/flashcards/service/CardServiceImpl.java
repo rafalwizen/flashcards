@@ -53,6 +53,10 @@ public class CardServiceImpl implements CardService {
 	@Override
 	public List<Card> findOnlySameLevel(int level) {
 		List<Card> tempList = cardDAO.findOnlySameLevel(level);
+		//handle error while empty bucket
+		if(tempList.isEmpty()) {
+			tempList.add(new Card("bucket is empty","koszyk jest pusty"));
+		}
 		return tempList;
 	}
 
