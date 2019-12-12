@@ -4,6 +4,4 @@ Application made for myself to fast add words to database and easy learn them. W
 It's not finished yet.
 
 # Features to add
-* deleting card
-* fix bug when empty bucket
 * upload to heroku or git.io
