@@ -22,7 +22,7 @@ It's uploaded on [rafalwizen-flashcards.herokuapp.com/game](https://rafalwizen-f
 * Maven - version 4.0.0
 
 ## Screenshots
-![Example screenshot](./screenshots/screenshot.jpg)
+![Example screenshot](./screenshots/screenshot1.jpg)
 
 
 ![Example screenshot](./screenshots/screenshot2.jpg)
