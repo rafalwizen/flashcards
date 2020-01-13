@@ -5,7 +5,6 @@
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Screenshots](#screenshots)
-* [Technologies](#technologies)
 * [Status](#status)
 
 ## General info
