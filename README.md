@@ -8,7 +8,8 @@
 * [Status](#status)
 
 ## General info
-It's uploaded on [rafalwizen-flashcards.herokuapp.com/game](https://rafalwizen-flashcards.herokuapp.com/game)
+Already database is uploaded on remotemysql.com and it's common to all.
+Application is uploaded on [rafalwizen-flashcards.herokuapp.com/game](https://rafalwizen-flashcards.herokuapp.com/game)
 
 ## Technologies
 * Java - version 1.8
