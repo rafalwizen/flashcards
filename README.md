@@ -2,14 +2,9 @@
 > Application made for myself to fast add words to database and easy learn them. With flashcards it's easy to learn by repeating words every day
 
 ## Table of contents
-* [General info](#general-info)
 * [Technologies](#technologies)
 * [Screenshots](#screenshots)
 * [Status](#status)
-
-## General info
-Already database is uploaded on remotemysql.com and it's common to all.
-Application is uploaded on [rafalwizen-flashcards.herokuapp.com/game](https://rafalwizen-flashcards.herokuapp.com/game)
 
 ## Technologies
 * Java - version 1.8
